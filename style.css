@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+}
+
+body { 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-image: url("./images/background-5.png");
+}
+
+img:hover {
+    cursor: pointer; 
+}
+
+.scrolling-section {
+    position: absolute;
+    bottom: 0px;
+}
+
+.start-game-button {
+    cursor: pointer;
+    border: 1px solid #9611f5;
+    background-color: transparent;
+    color: #d396ff;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+}
+
+
+@media only screen and (min-width: 0px) {
+    /*For mobile*/
+
+    .background-image {
+        width: 15rem;
+        height: 10rem;
+    }
+
+    .start-game-button {
+        height: 100px;
+        width: 250px;
+        font-size: 2em;
+        border-radius: 35px;
+    }
+
+    .start-game-button:hover {
+        background-color: #92809e;
+    }
+
+    .game-presentation {
+        text-align: center;
+        margin-top: 16rem;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    /*For tablet*/
+
+    .background-image {
+        width: 17rem;
+        height: 12rem;
+    }
+
+    .start-game-button {
+        height: 120px;
+        width: 270px;
+        font-size: 2.5em;
+        border-radius: 35px;
+    }
+
+    .game-presentation {
+        text-align: center;
+        margin-top: 16rem;
+    }
+}    
+
+@media only screen and (min-width: 768px) {
+    /*For Desktop*/
+
+    .background-image {
+        width: 19rem;
+        height: 14rem;
+    }
+
+    .start-game-button {
+        height: 150px;
+        width: 300px;
+        font-size: 3em;
+        border-radius: 35px;
+    }
+
+    .game-presentation {
+        text-align: center;
+        margin-top: 16rem;
+    }
+}
