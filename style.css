@@ -15,8 +15,8 @@ img:hover {
 }
 
 .scrolling-section {
-    position: absolute;
-    bottom: 0px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .start-game-button {
@@ -26,6 +26,21 @@ img:hover {
     color: #d396ff;
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
 }
+
+.background-content {
+    width: 300%;
+    display: flex;
+    animation: scrolling-section 10s linear infinite forwards;
+}
+
+@keyframes scrolling-section {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-66.6%);
+    }
+  }
 
 
 @media only screen and (min-width: 0px) {
@@ -51,6 +66,10 @@ img:hover {
         text-align: center;
         margin-top: 16rem;
     }
+
+    .scrolling-section {
+        margin-top: 16rem;
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -72,6 +91,10 @@ img:hover {
         text-align: center;
         margin-top: 16rem;
     }
+
+    .scrolling-section {
+        margin-top: 13rem;
+    }
 }    
 
 @media only screen and (min-width: 768px) {
@@ -92,5 +115,8 @@ img:hover {
     .game-presentation {
         text-align: center;
         margin-top: 16rem;
+    }
+    .scrolling-section {
+        margin-top: 9rem;
     }
 }
