@@ -7,38 +7,38 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section class="game-instructions">
-      <button onclick="instructionsToggle()" class="instructions-button">
-        Instructions
-      </button>
-      <div id="instructions-text">
-        <p>
-          Players deliver hand signals representing rock, paper, or scissors,
-          with the outcome determined by these three rules:
-        </p>
-        <ol>
-          <li>Rock wins against scissors.</li>
-          <li>Scissors win against paper.</li>
-          <li>Paper wins against rock.</li>
-        </ol>
-      </div>
-    </section>
     <section class="game-presentation">
       <a href="./page/gamePage.html">
         <button class="start-game-button">Start Game</button>
       </a>
     </section>
+    <section class="game-instructions">
+      <button onclick="instructionsToggle()" class="instructions-button">
+        Instructions
+      </button>
+      <div id="instructions-text" style="display:none;">
+        <p>
+          Players deliver hand signals representing rock, paper, or scissors,
+          with the outcome determined by these three rules:
+        </p>
+        <ul>
+          <li>Rock wins against scissors.</li>
+          <li>Scissors win against paper.</li>
+          <li>Paper wins against rock.</li>
+        </ul>
+      </div>
+    </section>
     <section class="scrolling-section">
       <figure class="background-content">
-        <picture class="background-images" valign="bottom">
-          <img src="./images/background-1.avif" class="background-image" />
-          <img src="./images/background-2.jpeg" class="background-image" />
-          <img src="./images/background-3.jpeg" class="background-image" />
-          <img src="./images/background-4.jpeg" class="background-image" />
-          <img src="./images/background-5.png" class="background-image" />
-          <img src="./images/background-6.jpeg" class="background-image" />
-          <img src="./images/background-7.jpg" class="background-image" />
-          <img src="./images/background-8.jpg" class="background-image" />
+        <picture class="background-images">
+          <img src="./images/background-1.avif" class="background-image">
+          <img src="./images/background-2.jpeg" class="background-image">
+          <img src="./images/background-3.jpeg" class="background-image">
+          <img src="./images/background-4.jpeg" class="background-image">
+          <img src="./images/background-5.png" class="background-image">
+          <img src="./images/background-6.jpeg" class="background-image">
+          <img src="./images/background-7.jpg" class="background-image">
+          <img src="./images/background-8.jpg" class="background-image">
         </picture>
       </figure>
     </section>
