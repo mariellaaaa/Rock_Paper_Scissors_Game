@@ -6,6 +6,7 @@ const rockPaperScissors = () => {
     const scissorButton = document.querySelector('#scissor-button')
     const notificationScreen = document.querySelector('#notification-screen')
     const scoreLabel = document.querySelector('#score-label')
+    let playsMade = document.querySelector('#plays-made-section')
 
     const turns = 5;
     let currentTurn = 0
@@ -27,6 +28,10 @@ const rockPaperScissors = () => {
         currentTurn = 0
         heroVictories = 0
         iaVictories = 0
+        let allPlaysMade = document.querySelectorAll('#plays-made-section p')
+        allPlaysMade.forEach(element => {
+            element.remove()
+        });
     }
 
     const computerPlay = () => {
@@ -44,25 +49,54 @@ const rockPaperScissors = () => {
         const rockWin = 'Rock beats Scissors!'
         const paperWin = 'Paper beats Rock!'
         const scissorWin = 'Scissors beats Paper!'
+        let message = ''
+        let gameElement = document.createElement('p')
         switch (true) {
             case (playerMove === 'rock' && computerMove === 'rock'):
-                return [`${tie}, Rocks clash!`, 0];
+                message = `${tie}, Rocks clash!`
+                gameElement.textContent = message
+                playsMade.appendChild(gameElement)
+                return [message, 0];
             case (playerMove === 'rock' && computerMove === 'paper'):
-                return [`${aiVictory}, ${paperWin}`, 2]
+                message = `${aiVictory}, ${paperWin}`
+                gameElement.textContent = message
+                playsMade.appendChild(gameElement)
+                return [message, 2]
             case (playerMove === 'rock' && computerMove === 'scissors'):
-                return [`${heroVictory}, ${rockWin}`, 1];
+                message = `${heroVictory}, ${rockWin}`
+                gameElement.textContent = message
+                playsMade.appendChild(gameElement)
+                return [message, 1];
             case (playerMove === 'paper' && computerMove === 'rock'):
-                return [`${heroVictory}, ${paperWin}`, 1];
+                message = `${heroVictory}, ${paperWin}`
+                gameElement.textContent = message
+                playsMade.appendChild(gameElement)
+                return [message, 1];
             case (playerMove === 'paper' && computerMove === 'paper'):
-                return [`${tie}, Papers clash!`, 0];
+                message = `${tie}, Papers clash!`
+                gameElement.textContent = message
+                playsMade.appendChild(gameElement)
+                return [message, 0];
             case (playerMove === 'paper' && computerMove === 'scissors'):
-                return [`${aiVictory}, ${scissorWin}`, 2];
+                message = `${aiVictory}, ${scissorWin}`
+                gameElement.textContent = message
+                playsMade.appendChild(gameElement)
+                return [message, 2];
             case (playerMove === 'scissors' && computerMove === 'rock'):
-                return [`${aiVictory}, ${rockWin}`, 2];
+                message = `${aiVictory}, ${rockWin}`
+                gameElement.textContent = message
+                playsMade.appendChild(gameElement)
+                return [message, 2];
             case (playerMove === 'scissors' && computerMove === 'paper'):
-                return [`${heroVictory}, ${scissorWin}`, 1];
+                message = `${heroVictory}, ${scissorWin}`
+                gameElement.textContent = message
+                playsMade.appendChild(gameElement)
+                return [message, 1];
             case (playerMove === 'scissors' && computerMove === 'scissors'):
-                return [`${tie}, Scissors clash!`, 0];
+                message = `${tie}, Scissors clash!`
+                gameElement.textContent = message
+                playsMade.appendChild(gameElement)
+                return [message, 0];
         }
     }
 
