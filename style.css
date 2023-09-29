@@ -1,122 +1,152 @@
 * {
-    margin: 0;
+  margin: 0;
 }
 
-body { 
-    background-size: cover; 
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-image: url("./images/background-5.png");
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-image: url("./images/background-5.png");
 }
 
 img:hover {
-    cursor: pointer; 
+  cursor: pointer;
 }
 
 .scrolling-section {
-    white-space: nowrap;
-    overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.start-game-button {
-    cursor: pointer;
-    border: 1px solid #9611f5;
-    background-color: transparent;
-    color: #d396ff;
-    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+.start-game-button,
+.instructions-button {
+  cursor: pointer;
+  border: 1px solid #9611f5;
+  background-color: transparent;
+  color: #d396ff;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
 }
 
 .background-content {
-    width: 300%;
-    display: flex;
-    animation: scrolling-section 10s linear infinite forwards;
+  width: 300%;
+  display: flex;
+  animation: scrolling-section 10s linear infinite forwards;
+}
+#instructions-text {
+  width: 40%;
+  padding: 50px 0;
+  display: none;
+  background-color: rgb(31, 35, 111, 0.7);
+  color: aliceblue;
+  margin: 1rem auto 1rem auto;
+  font-size: 1.5rem;
 }
 
 @keyframes scrolling-section {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-66.6%);
-    }
+  0% {
+    transform: translateX(0);
   }
-
+  100% {
+    transform: translateX(-66.6%);
+  }
+}
 
 @media only screen and (min-width: 0px) {
-    /*For mobile*/
+  /*For mobile*/
 
-    .background-image {
-        width: 15rem;
-        height: 10rem;
-    }
+  .background-image {
+    width: 15rem;
+    height: 10rem;
+  }
 
-    .start-game-button {
-        height: 100px;
-        width: 250px;
-        font-size: 2em;
-        border-radius: 35px;
-    }
+  .start-game-button,
+  .instructions-button {
+    height: 100px;
+    width: 250px;
+    font-size: 2em;
+    border-radius: 35px;
+  }
 
-    .start-game-button:hover {
-        background-color: #92809e;
-    }
+  .start-game-button:hover {
+    background-color: #92809e;
+  }
+  .instructions-button:hover {
+    background-color: #92809e;
+  }
 
-    .game-presentation {
-        text-align: center;
-        margin-top: 16rem;
-    }
+  .game-presentation,
+  .game-instructions {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  #instructions-text {
+    font-size: 1rem;
+    width: 60%;
+  }
 
-    .scrolling-section {
-        margin-top: 16rem;
-    }
+  .scrolling-section {
+    margin-top: 16rem;
+  }
 }
 
 @media only screen and (min-width: 600px) {
-    /*For tablet*/
+  /*For tablet*/
 
-    .background-image {
-        width: 17rem;
-        height: 12rem;
-    }
+  .background-image {
+    width: 17rem;
+    height: 12rem;
+  }
 
-    .start-game-button {
-        height: 120px;
-        width: 270px;
-        font-size: 2.5em;
-        border-radius: 35px;
-    }
+  .start-game-button,
+  .instructions-button {
+    height: 120px;
+    width: 270px;
+    font-size: 2.5em;
+    border-radius: 35px;
+  }
 
-    .game-presentation {
-        text-align: center;
-        margin-top: 16rem;
-    }
+  .game-presentation,
+  .game-instructions {
+    text-align: center;
+    margin-top: 2rem;
+  }
 
-    .scrolling-section {
-        margin-top: 13rem;
-    }
-}    
+  .scrolling-section {
+    margin-top: 13rem;
+  }
+  #instructions-text {
+    font-size: 1.2rem;
+    width: 40%;
+  }
+}
 
 @media only screen and (min-width: 768px) {
-    /*For Desktop*/
+  /*For Desktop*/
 
-    .background-image {
-        width: 19rem;
-        height: 14rem;
-    }
+  .background-image {
+    width: 19rem;
+    height: 14rem;
+  }
 
-    .start-game-button {
-        height: 150px;
-        width: 300px;
-        font-size: 3em;
-        border-radius: 35px;
-    }
+  .start-game-button,
+  .instructions-button {
+    height: 150px;
+    width: 300px;
+    font-size: 3em;
+    border-radius: 35px;
+  }
 
-    .game-presentation {
-        text-align: center;
-        margin-top: 16rem;
-    }
-    .scrolling-section {
-        margin-top: 9rem;
-    }
+  .game-presentation,
+  .game-instructions {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .scrolling-section {
+    margin-top: 9rem;
+  }
+  #instructions-text {
+    font-size: 1.2rem;
+    width: 40%;
+  }
 }
