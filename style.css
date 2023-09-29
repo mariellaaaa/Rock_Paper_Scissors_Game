@@ -31,7 +31,7 @@ img:hover {
 .background-content {
   width: 300%;
   display: flex;
-  animation: scrolling-section 10s linear infinite forwards;
+  animation: scrolling-section 15s linear 0s infinite;
 }
 #instructions-text {
   width: 40%;
@@ -45,10 +45,10 @@ img:hover {
 
 @keyframes scrolling-section {
   0% {
-    transform: translateX(0);
+    transform: translateX(+50%);
   }
   100% {
-    transform: translateX(-66.6%);
+    transform: translateX(-50%);
   }
 }
 
