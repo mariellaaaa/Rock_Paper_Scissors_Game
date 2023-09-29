@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="gamePage.js" defer></script>
+</head>
+<body>
+    <header>
+        <p>
+            ROCK, PAPER, SCISSORS
+        </p>
+       
+        <a href="../index.html">
+            <button class="go-back-button">
+              Go back to Start
+            </button>
+        </a>
+    </header>
+    <section class="main-game">
+        <section class="score-section">
+            <h1> Scoreboard:</h1>
+            <p id="score-label"></p>
+        </section>
+        <section class="notifications">
+            <p id="notification-screen"></p>
+        </section>
+        <picture id="plays-made-section">
+            <h2>Plays made in game</h2>
+        </picture>
+    </section>
+    <section class="game-settings">
+        <button id="start-game-button">
+            Start Game!
+        </button>
+        <button id="restart-game-button" disabled>
+            Restart Game!
+        </button>
+    </section>
+    <section class="game-controls">
+        <button id="rock-button" disabled>
+            ROCK
+        </button>
+        <button id="paper-button" disabled>
+            PAPER
+        </button>
+        <button id="scissor-button" disabled>
+            SCISSORS
+        </button>
+    </section>
+    <footer>
+        <p>Developed by Code Elite</p>
+    </footer>
+</body>
+</html>
