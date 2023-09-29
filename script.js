@@ -7,6 +7,7 @@ function handleClick(e) {
     document.body.style.backgroundImage = `url(${src})`;
   }
 }
+
 function instructionsToggle() {
   let rulesText = document.getElementById("instructions-text");
   if (rulesText.style.display === "none") {
