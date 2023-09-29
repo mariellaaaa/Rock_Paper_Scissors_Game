@@ -1,3 +1,12 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const backgrounds = JSON.parse(localStorage.getItem('userBackgrounds'));
+
+    if (backgrounds && backgrounds.length > 0) {
+        const lastBackground = backgrounds[backgrounds.length - 1];
+        document.body.style.backgroundImage = lastBackground;
+    }
+})
+
 const rockPaperScissors = () => {
     const startButton = document.querySelector('#start-game-button')
     const restartButton = document.querySelector('#restart-game-button')
