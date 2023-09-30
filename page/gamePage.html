@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Game Page</title>
     <link rel="stylesheet" href="style.css" />
     <script src="gamePage.js" defer></script>
 </head>
 <body>
     <header>
-        <p>
-            ROCK, PAPER, SCISSORS
-        </p>
-       
         <a href="../index.html">
             <button class="go-back-button">
               Go back to Start
             </button>
         </a>
+        <p>
+            ROCK, PAPER, SCISSORS
+        </p>
     </header>
     <section id="game-area">
         <section class="game-settings">
             <button id="start-game-button">
-                Start Game!
+                Play!
             </button>
             <button id="restart-game-button" disabled>
                 Restart Game!
@@ -30,30 +29,33 @@
         </section>
         <section class="main-game">
             <section class="score-section">
-                <h1> Scoreboard:</h1>
-                <p id="score-label"></p>
+                <div class="scoreboard">
+                    <h1 id="scoreboard-text"></h1>
+                    <p id="score-label"></p>
+                </div>
+                <div class="rounds">
+                    <p id="rounds-label">Round</p>
+                </div>
             </section>
             <section class="notifications">
                 <p id="notification-screen"></p>
             </section>
             
             <section id="plays-made-section">
-                <h2>Plays made in game</h2>
-                <picture >
-                
+                <h2 id="plays-in-game">Plays made in game</h2>
+                <picture>
                 </picture>
             </section>
         </section>
-        
-        <siection class="game-controls">
+        <section class="game-controls">
             <button id="rock-button" disabled>
-                ROCK
+                <img src="./images/righthandrock_light.png" alt="rock image">
             </button>
             <button id="paper-button" disabled>
-                PAPER
+                <img src="./images/righthandpaper_light.png" alt="paper image">
             </button>
             <button id="scissor-button" disabled>
-                SCISSORS
+                <img src="./images/lefthandscissors_light.png" alt="scissors image">
             </button>
         </section>
     </section>
