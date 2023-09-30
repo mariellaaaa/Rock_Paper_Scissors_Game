@@ -13,20 +13,19 @@ const rockPaperScissors = () => {
     const rockButton = document.querySelector('#rock-button')
     const paperButton = document.querySelector('#paper-button')
     const scissorButton = document.querySelector('#scissor-button')
-    const notificationScreen = document.querySelector('#notification-screen')
+    let notificationScreen = document.querySelector('#notification-screen')
+    let notificationSection= document.querySelector('.notifications')
     const scoreLabel = document.querySelector('#score-label')
-    let playsMade = document.querySelector('#plays-made-section')
+    const roundsLabel = document.querySelector('#rounds-label')
+    let playsMade = document.querySelector('#plays-made-section picture')
 
-    const turns = 5;
+    const turns = 9;
     let currentTurn = 0
     let heroVictories = 0
     let iaVictories = 0
     let mayorityTurns = Math.ceil(turns/2)
 
-    notificationScreen.textContent = `Welcome to Rock Paper Scissors!`
     scoreLabel.textContent = `You will play for ${turns} round or until either you or the AI wins ${mayorityTurns} games, Good Luck!`
-
-    
 
     const restartGame = () => {
         startButton.disabled = false
@@ -37,7 +36,7 @@ const rockPaperScissors = () => {
         currentTurn = 0
         heroVictories = 0
         iaVictories = 0
-        let allPlaysMade = document.querySelectorAll('#plays-made-section p')
+        let allPlaysMade = document.querySelectorAll('#plays-made-section img')
         allPlaysMade.forEach(element => {
             element.remove()
         });
@@ -59,51 +58,61 @@ const rockPaperScissors = () => {
         const paperWin = 'Paper beats Rock!'
         const scissorWin = 'Scissors beats Paper!'
         let message = ''
-        let gameElement = document.createElement('p')
+        let gameElement = document.createElement('img')
+        document.getElementById('plays-in-game').style.display = 'block'
         switch (true) {
             case (playerMove === 'rock' && computerMove === 'rock'):
                 message = `${tie}, Rocks clash!`
-                gameElement.textContent = message
+                gameElement.alt = message
+                gameElement.src = './images/r & r.png'
                 playsMade.appendChild(gameElement)
                 return [message, 0];
             case (playerMove === 'rock' && computerMove === 'paper'):
                 message = `${aiVictory}, ${paperWin}`
-                gameElement.textContent = message
+                gameElement.alt = message
+                gameElement.src = './images/r & p.png'
                 playsMade.appendChild(gameElement)
                 return [message, 2]
             case (playerMove === 'rock' && computerMove === 'scissors'):
                 message = `${heroVictory}, ${rockWin}`
-                gameElement.textContent = message
+                gameElement.alt = message
+                gameElement.src = './images/r & s.png'
                 playsMade.appendChild(gameElement)
                 return [message, 1];
             case (playerMove === 'paper' && computerMove === 'rock'):
                 message = `${heroVictory}, ${paperWin}`
-                gameElement.textContent = message
+                gameElement.alt = message
+                gameElement.src = './images/p & r.png'
                 playsMade.appendChild(gameElement)
                 return [message, 1];
             case (playerMove === 'paper' && computerMove === 'paper'):
                 message = `${tie}, Papers clash!`
-                gameElement.textContent = message
+                gameElement.alt = message
+                gameElement.src = './images/p & p.png'
                 playsMade.appendChild(gameElement)
                 return [message, 0];
             case (playerMove === 'paper' && computerMove === 'scissors'):
                 message = `${aiVictory}, ${scissorWin}`
-                gameElement.textContent = message
+                gameElement.alt = message
+                gameElement.src = './images/p & s.png'
                 playsMade.appendChild(gameElement)
                 return [message, 2];
             case (playerMove === 'scissors' && computerMove === 'rock'):
                 message = `${aiVictory}, ${rockWin}`
-                gameElement.textContent = message
+                gameElement.alt = message
+                gameElement.src = './images/s & r.png'
                 playsMade.appendChild(gameElement)
                 return [message, 2];
             case (playerMove === 'scissors' && computerMove === 'paper'):
                 message = `${heroVictory}, ${scissorWin}`
-                gameElement.textContent = message
+                gameElement.alt = message
+                gameElement.src = './images/s & p.png'
                 playsMade.appendChild(gameElement)
                 return [message, 1];
             case (playerMove === 'scissors' && computerMove === 'scissors'):
                 message = `${tie}, Scissors clash!`
-                gameElement.textContent = message
+                gameElement.alt = message
+                gameElement.src = './images/s & s.png'
                 playsMade.appendChild(gameElement)
                 return [message, 0];
         }
@@ -124,29 +133,46 @@ const rockPaperScissors = () => {
         notificationScreen.textContent = displayMessage
         if (roundWiner !== 0) {
             currentTurn++;
-            scoreLabel.textContent = `Player: ${heroVictories} vs IA: ${iaVictories}  Current round: ${currentTurn + 1}!`
+            scoreLabel.textContent = `Score\nPlayer: ${heroVictories} vs IA: ${iaVictories}`
+            roundsLabel.textContent = `Round\n${currentTurn + 1}`
         }
         if (currentTurn === turns || heroVictories == mayorityTurns || iaVictories == mayorityTurns) {
+            let gameOverElement = document.createElement('img')
+            let message = ''
+            let imageDirection = ''
             if (heroVictories > iaVictories) {
-                notificationScreen.textContent = `GAME OVER! YOU WIN! WE ARE SAVED!`
+                message = `GAME OVER! YOU WIN!`
+                imageDirection = './images/starWinner.png'
+                document.getElementById('plays-in-game').style.display = 'none'
             } else if (heroVictories < iaVictories) {
-                notificationScreen.textContent = `GAME OVER! THE EVIL IA WON! WE ARE DOOMED!`
-            } else {
-                notificationScreen.textContent = `GAME OVER! NO ONE WON! IT's A TIE!`
-            }
-            scoreLabel.textContent = `Player: ${heroVictories} vs IA: ${iaVictories} Final Score!`
+                message = `GAME OVER! THE EVIL IA WON!`
+                imageDirection = './images/starLost.png'
+                document.getElementById('plays-in-game').style.display = 'none'
+            } 
+
+            gameOverElement.alt = message
+            gameOverElement.src = imageDirection
+            notificationSection.appendChild(gameOverElement)
+            notificationScreen.textContent = message
+            scoreLabel.textContent = `Score\nPlayer: ${heroVictories} vs IA: ${iaVictories} Final Score!`
             restartGame()
         } 
     }
 
     const startGame = () => {
         notificationScreen.textContent = `The game has begun!`
-        scoreLabel.textContent = `Player: ${heroVictories} vs IA: ${iaVictories}  Current round: ${currentTurn + 1}!`
+        scoreLabel.textContent = `Score\nPlayer: ${heroVictories} vs IA: ${iaVictories}`
+        roundsLabel.textContent = `Round\n${currentTurn + 1}`
         startButton.disabled = true
         restartButton.disabled = false
         rockButton.disabled = false
         paperButton.disabled = false
         scissorButton.disabled = false
+        let allWinScenarios = document.querySelectorAll('.notifications img')
+        document.querySelectorAll('.notifications img').remove
+        allWinScenarios.forEach(element => {
+            element.remove()
+        });
     }
 
     startButton.addEventListener('click', (e) => {

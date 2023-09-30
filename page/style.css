@@ -1,5 +1,11 @@
 * {
     margin: 0;
+    font-family: 'audiowide', sans-serif;
+}
+
+@font-face {
+    font-family: 'audiowide';
+    src: url(../fonts/Audiowide-Regular.ttf);
 }
 
 body {
@@ -11,18 +17,229 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    align-items: center;
+    min-height: 100vh;
+    height: 100%;
+    min-width: 100vw;
+    width: 100%;
+}
+
+header, footer{
+    display: flex;
+    background-color: #4f2a69a5 ;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+
+header p, footer p {
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+#start-game-button, #restart-game-button {
+    background-color: #d396ff;
+    padding: 1rem;
+    border-radius: 35px;
+    cursor: pointer;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+}
+
+.go-back-button {
+    background-color: transparent;
+    border-radius: 35px;
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    padding: 1rem;
+    color: #ffffff;
+}
+
+#rock-button, #paper-button, #scissor-button {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 3px;
+    cursor: pointer;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+}
+
+#rock-button>img, #paper-button>img, #scissor-button>img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 #game-area {
-    position: absolute;
-    top: 10%;
-    left: 10%;
     width: 80%;
-    max-width: 400px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.7);
+    min-width: 300px;
+    max-height: 80%;
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 15px;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
+
+#plays-made-section, .notifications{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.score-section {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.scoreboard {
+    max-height: 80px;
+    min-width: 100px;
+    padding: 10px;
+    border-radius: 35px;
+    background-color: transparent;
+    border: 1px solid #9611f5;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    white-space: pre-line;
+}
+
+#scoreboard-text, .notifications {
+    color: #9611f5;
+}
+
+.rounds {
+    max-height: 80px;
+    min-width: 100px;
+    background-color: transparent;
+    border: 1px solid #9611f5;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 35px;
+    white-space: pre-line;
+}
+
+.rounds p {
+    margin: 0;
+    text-align: center;
+}
+
+#plays-made-section picture{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 50vh;
+}
+
+#plays-made-section img {
+    width : 15%;
+}
+
+#plays-made-section h2 {
+    display: none;
+}
+
+.notifications img{
+    width: 50%;
+}
+.notifications {
+    margin-top: 1rem;
+}
+
+.game-settings, .game-controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: #4f2a69a5;
+    padding: 0.5rem;
+}
+
+@media only screen and (min-width: 0px) {
+
+    /* For Mobile: */
+
+    header p, .notifications{
+        font-size: 25px;
+    }
+
+    #scoreboard-text, .notifications, #plays-in-game {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    #score-label, #rounds-label {
+        font-size: 13px;
+    }
+
+    #start-game-button, #restart-game-button {
+        font-size: 15px;
+    }
+
+    #rock-button, #paper-button, #scissor-button {
+        max-width: 20%;
+        max-height: 20%;
+    }
+}    
+
+@media only screen and (min-width: 600px) {
+    /*For tablet*/
+
+    header p, .notifications{
+        font-size: 30px;
+    }
+
+    #scoreboard-text, .notifications, #plays-in-game {
+        font-size: 20px;
+    }
+
+    #score-label, #rounds-label {
+        font-size: 15px;
+    }
+
+    #start-game-button, #restart-game-button {
+        font-size: 20px;
+    }
+
+    #rock-button, #paper-button, #scissor-button {
+        max-width: 15%;
+        max-height: 15%;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+    /*For Desktop*/
+
+    header p, .notifications {
+        font-size: 40px;
+    }
+
+    #scoreboard-text, .notifications, #plays-in-game{
+        font-size: 25px;
+    }
+
+    #score-label, #rounds-label {
+        font-size: 20px;
+    }
+
+    #start-game-button, #restart-game-button {
+        font-size: 25px;
+    }
+
+    #rock-button, #paper-button, #scissor-button {
+        max-width: 10%;
+        max-height: 10%;
+    }
+  }
