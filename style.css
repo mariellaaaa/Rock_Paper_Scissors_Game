@@ -1,102 +1,103 @@
 * {
-    margin: 0;
+  margin: 0;
 }
 
 @font-face {
-    font-family: 'pressStart';
-    src: url(./fonts/PressStart2P-Regular.ttf);
+  font-family: "pressStart";
+  src: url(./fonts/PressStart2P-Regular.ttf);
 }
 
 @font-face {
-    font-family: 'audiowide';
-    src: url(./fonts/Audiowide-Regular.ttf);
+  font-family: "audiowide";
+  src: url(./fonts/Audiowide-Regular.ttf);
 }
 
 body {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-image: url("./images/background-5.png");
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-image: url("./images/background-5.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
 }
 
 .title-section {
-    text-align: center;
-    font-family: 'pressStart', sans-serif;
-    margin-top: 2rem;
-    color: #d396ff;
+  text-align: center;
+  font-family: "pressStart", sans-serif;
+  margin-top: 2rem;
+  color: #d396ff;
 }
 
 img:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .scrolling-section {
-    white-space: nowrap;
-    overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .scroll-container {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+  position: fixed;
+
+  width: 100%;
 }
 
 .start-game-button,
 .instructions-button {
-    cursor: pointer;
-    border: 1px solid #9611f5;
-    background-color: transparent;
-    color: #d396ff;
-    font-family: 'audiowide', sans-serif;
-    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  border: 1px solid #9611f5;
+  background-color: transparent;
+  color: #d396ff;
+  font-family: "audiowide", sans-serif;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
 }
 
 .background-content {
-    width: 300%;
-    display: flex;
-    animation: scrolling-section 15s linear 0s infinite;
+  width: 100%;
+  display: flex;
+  margin-bottom: 10px;
+  animation: scrolling-section 8s linear -1s infinite;
 }
 
 #instructions-text {
-    width: 60%;
-    padding: 50px 0;
-    background-color: transparent;
-    border: 1px solid #9611f5;
-    color: aliceblue;
-    margin: 1rem auto 1rem auto;
-    font-family: 'audiowide', sans-serif;
-    font-size: 1.5rem;
-    display: block;
-    border-radius: 35px;
+  width: 60%;
+  padding: 50px 0;
+  background-color: transparent;
+  border: 1px solid #9611f5;
+  color: aliceblue;
+  margin: 1rem auto 1rem auto;
+  font-family: "audiowide", sans-serif;
+  font-size: 1.5rem;
+  display: block;
+  border-radius: 35px;
 }
 
 .start-game-button,
 .instructions-button {
-    width: 60%;
+  width: 60%;
 }
 
-#instructions-text>p {
-    margin-top: -1rem;
+#instructions-text > p {
+  margin-top: -1rem;
 }
 
 ul {
-    margin:0;
-    padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 li {
-    height: 30px;
-    background: rgb(146, 128, 158, 0.7);
-    border-radius: 35px;
-    list-style: none;
-    margin:.5rem;
-    color: white;
-    align-items: center;
+  height: 30px;
+  background: rgb(146, 128, 158, 0.7);
+  border-radius: 35px;
+  list-style: none;
+  margin: 0.5rem;
+  color: white;
+  align-items: center;
 }
 
 @keyframes scrolling-section {
@@ -186,7 +187,7 @@ li {
     font-size: 3rem;
   }
 
-  .start-game-button, 
+  .start-game-button,
   .instructions-button {
     font-size: 2em;
     border-radius: 35px;
@@ -202,4 +203,3 @@ li {
     font-size: 1.2rem;
   }
 }
-
