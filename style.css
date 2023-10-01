@@ -99,14 +99,6 @@ li {
     align-items: center;
 }
 
-@keyframes scrolling-section {
-  0% {
-    transform: translateX(+50%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
 
 @media only screen and (min-width: 0px) {
   /*For mobile*/
@@ -143,6 +135,15 @@ li {
   #instructions-text {
     font-size: 1rem;
   }
+
+  @keyframes scrolling-section {
+    0% {
+      transform: translateX(+50%);
+    }
+    100% {
+      transform: translateX(-220%);
+    }
+  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -172,6 +173,15 @@ li {
   #instructions-text {
     font-size: 1.2rem;
   }
+
+  @keyframes scrolling-section {
+    0% {
+      transform: translateX(+50%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -200,6 +210,15 @@ li {
 
   #instructions-text {
     font-size: 1.2rem;
+  }
+
+  @keyframes scrolling-section {
+    0% {
+      transform: translateX(+50%);
+    }
+    100% {
+      transform: translateX(-120%);
+    }
   }
 }
 
