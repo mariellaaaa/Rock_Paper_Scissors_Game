@@ -142,21 +142,10 @@ header p, footer p {
     width: 100%;
 }
 
-.activate-plays-made-section {
-    height: 40vh;
-}
-
-#plays-made-section img {
-    width : 15%;
-}
-
 #plays-made-section h2 {
     display: none;
 }
 
-.notifications img{
-    width: 20%;
-}
 .notifications {
     margin-top: 1rem;
 }
@@ -195,6 +184,26 @@ header p, footer p {
         max-width: 20%;
         max-height: 20%;
     }
+
+    #plays-made-section img {
+        width : 35%;
+    }
+    
+    .notifications img{
+        width: 80%;
+    }
+
+    .activate-plays-made-section {
+        min-height: 48vh;
+    }
+
+    .notifications{
+        height: max-content;
+    }
+
+    #notification-screen{
+        height: 7vh;
+    }
 }    
 
 @media only screen and (min-width: 600px) {
@@ -221,6 +230,25 @@ header p, footer p {
         max-height: 15%;
     }
 
+    #plays-made-section img {
+        width : 15%;
+    }
+    
+    .notifications img{
+        width: 20%;
+    }
+
+    .activate-plays-made-section {
+        height: 40vh;
+    }
+
+    .notifications{
+        height: auto;
+    }
+
+    #notification-screen{
+        height: max-content;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -245,5 +273,25 @@ header p, footer p {
     #rock-button, #paper-button, #scissor-button {
         max-width: 10%;
         max-height: 10%;
+    }
+
+    #plays-made-section img {
+        width : 25%;
+    }
+    
+    .notifications img{
+        width: 40%;
+    }
+
+    .activate-plays-made-section {
+        height: 40vh;
+    }
+
+    .notifications{
+        height: auto;
+    }
+
+    #notification-screen{
+        height: max-content;
     }
   }

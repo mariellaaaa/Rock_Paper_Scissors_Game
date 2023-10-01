@@ -185,6 +185,7 @@ const rockPaperScissors = () => {
 
     restartButton.addEventListener('click', (e) => {
         restartGame()
+        notificationScreen.textContent = `Game reset`
     })
 
     rockButton.addEventListener('click', () => {
