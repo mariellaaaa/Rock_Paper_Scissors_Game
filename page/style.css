@@ -194,7 +194,8 @@ header p, footer p {
     }
 
     .activate-plays-made-section {
-        min-height: 48vh;
+        overflow: auto;
+        height: 48vh;
     }
 
     .notifications{
@@ -239,6 +240,7 @@ header p, footer p {
     }
 
     .activate-plays-made-section {
+        overflow: auto;
         height: 40vh;
     }
 
@@ -284,6 +286,7 @@ header p, footer p {
     }
 
     .activate-plays-made-section {
+        overflow: auto;
         height: 40vh;
     }
 
