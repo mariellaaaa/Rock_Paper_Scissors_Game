@@ -139,7 +139,11 @@ header p, footer p {
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 50vh;
+    width: 100%;
+}
+
+.activate-plays-made-section {
+    height: 40vh;
 }
 
 #plays-made-section img {
@@ -151,7 +155,7 @@ header p, footer p {
 }
 
 .notifications img{
-    width: 50%;
+    width: 20%;
 }
 .notifications {
     margin-top: 1rem;
