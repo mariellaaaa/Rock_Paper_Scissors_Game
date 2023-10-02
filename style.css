@@ -56,12 +56,6 @@ img:hover {
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
 }
 
-.background-content {
-  width: 100%;
-  display: flex;
-  margin-bottom: 10px;
-  animation: scrolling-section 8s linear -1s infinite;
-}
 
 #instructions-text {
   width: 60%;
@@ -139,11 +133,18 @@ li {
 
   @keyframes scrolling-section {
     0% {
-      transform: translateX(+50%);
+      transform: translateX(+200%);
     }
     100% {
-      transform: translateX(-220%);
+      transform: translateX(-620%);
     }
+  }
+
+  .background-content {
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+    animation: scrolling-section 10s linear -1s infinite;
   }
 }
 
@@ -177,11 +178,18 @@ li {
 
   @keyframes scrolling-section {
     0% {
-      transform: translateX(+50%);
+      transform: translateX(+200%);
     }
     100% {
-      transform: translateX(-100%);
+      transform: translateX(-380%);
     }
+  }
+
+  .background-content {
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+    animation: scrolling-section 10s linear -1s infinite;
   }
 }
 
@@ -215,10 +223,17 @@ li {
 
   @keyframes scrolling-section {
     0% {
-      transform: translateX(+50%);
+      transform: translateX(+200%);
     }
     100% {
-      transform: translateX(-120%);
+      transform: translateX(-320%);
     }
+  }
+
+  .background-content {
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+    animation: scrolling-section 14s linear -1s infinite;
   }
 }
