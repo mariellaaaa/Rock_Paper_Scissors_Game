@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (e.target.matches('img')) {
       const { src } = e.target;
       document.body.style.backgroundImage = `url(${src})`;
-      const selectedBackground = `url(${src})`
+      const selectedBackground = `url(${src})`;
       localStorage.setItem('userBackground', selectedBackground);
       document.body.style.backgroundImage = selectedBackground;
       let backgrounds = JSON.parse(localStorage.getItem('userBackgrounds')) || [];

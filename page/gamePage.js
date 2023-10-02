@@ -8,39 +8,39 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 const rockPaperScissors = () => {
-    const startButton = document.querySelector('#start-game-button')
-    const restartButton = document.querySelector('#restart-game-button')
-    const rockButton = document.querySelector('#rock-button')
-    const paperButton = document.querySelector('#paper-button')
-    const scissorButton = document.querySelector('#scissor-button')
-    let notificationScreen = document.querySelector('#notification-screen')
-    let notificationSection= document.querySelector('.notifications')
-    const scoreLabel = document.querySelector('#score-label')
-    const roundsLabel = document.querySelector('#rounds-label')
-    let playsMade = document.querySelector('#plays-made-section picture')
+    const startButton = document.querySelector('#start-game-button');
+    const restartButton = document.querySelector('#restart-game-button');
+    const rockButton = document.querySelector('#rock-button');
+    const paperButton = document.querySelector('#paper-button');
+    const scissorButton = document.querySelector('#scissor-button');
+    let notificationScreen = document.querySelector('#notification-screen');
+    let notificationSection= document.querySelector('.notifications');
+    const scoreLabel = document.querySelector('#score-label');
+    const roundsLabel = document.querySelector('#rounds-label');
+    let playsMade = document.querySelector('#plays-made-section picture');
 
     const turns = 9;
-    let currentTurn = 0
-    let heroVictories = 0
-    let iaVictories = 0
-    let mayorityTurns = Math.ceil(turns/2)
+    let currentTurn = 0;
+    let heroVictories = 0;
+    let iaVictories = 0;
+    let mayorityTurns = Math.ceil(turns/2);
 
-    scoreLabel.textContent = `You will play for ${turns} round or until either you or the AI wins ${mayorityTurns} games, Good Luck!`
+    scoreLabel.textContent = `You will play for ${turns} round or until either you or the AI wins ${mayorityTurns} games, Good Luck!`;
 
     const restartGame = () => {
-        startButton.disabled = false
-        restartButton.disabled = true
-        rockButton.disabled = true
-        paperButton.disabled = true
-        scissorButton.disabled = true
-        currentTurn = 0
-        heroVictories = 0
-        iaVictories = 0
-        let allPlaysMade = document.querySelectorAll('#plays-made-section img')
+        startButton.disabled = false;
+        restartButton.disabled = true;
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorButton.disabled = true;
+        currentTurn = 0;
+        heroVictories = 0;
+        iaVictories = 0;
+        let allPlaysMade = document.querySelectorAll('#plays-made-section img');
         allPlaysMade.forEach(element => {
-            element.remove()
+            element.remove();
         });
-        playsMade.classList.toggle('activate-plays-made-section')
+        playsMade.classList.toggle('activate-plays-made-section');
     }
 
     const computerPlay = () => {
@@ -50,17 +50,17 @@ const rockPaperScissors = () => {
     }
 
     const playRound = (playerSelection, computerSelection) => {
-        const playerMove = playerSelection.toLowerCase()
-        const computerMove = computerSelection.toLowerCase()
-        const heroVictory = 'Hero wins!'
-        const aiVictory = 'Evil AI Wins!'
-        const tie = `It's a tie!`
-        const rockWin = 'Rock beats Scissors!'
-        const paperWin = 'Paper beats Rock!'
-        const scissorWin = 'Scissors beats Paper!'
-        let message = ''
-        let gameElement = document.createElement('img')
-        document.getElementById('plays-in-game').style.display = 'block'
+        const playerMove = playerSelection.toLowerCase();
+        const computerMove = computerSelection.toLowerCase();
+        const heroVictory = 'Hero wins!';
+        const aiVictory = 'Evil AI Wins!';
+        const tie = `It's a tie!`;
+        const rockWin = 'Rock beats Scissors!';
+        const paperWin = 'Paper beats Rock!';
+        const scissorWin = 'Scissors beats Paper!';
+        let message = '';
+        let gameElement = document.createElement('img');
+        document.getElementById('plays-in-game').style.display = 'block';
         switch (true) {
             case (playerMove === 'rock' && computerMove === 'rock'):
                 message = `${tie}, Rocks clash!`
@@ -120,9 +120,9 @@ const rockPaperScissors = () => {
     }
 
     const game = (playerMove) => {
-        let roundResult = playRound(playerMove, computerPlay())
-        let displayMessage = roundResult[0]
-        let roundWiner = roundResult[1]
+        let roundResult = playRound(playerMove, computerPlay());
+        let displayMessage = roundResult[0];
+        let roundWiner = roundResult[1];
         switch (roundWiner) {
             case 1:
                 heroVictories++;
@@ -131,75 +131,75 @@ const rockPaperScissors = () => {
                 iaVictories++;
                 break;
         }
-        notificationScreen.textContent = displayMessage
+        notificationScreen.textContent = displayMessage;
         if (roundWiner !== 0) {
             currentTurn++;
-            scoreLabel.textContent = `Score\nPlayer: ${heroVictories} vs IA: ${iaVictories}`
-            roundsLabel.textContent = `Round\n${currentTurn + 1}`
+            scoreLabel.textContent = `Score\nPlayer: ${heroVictories} vs IA: ${iaVictories}`;
+            roundsLabel.textContent = `Round\n${currentTurn + 1}`;
         }
         if (currentTurn === turns || heroVictories == mayorityTurns || iaVictories == mayorityTurns) {
-            let gameOverElement = document.createElement('img')
-            let message = ''
-            let imageDirection = ''
+            let gameOverElement = document.createElement('img');
+            let message = '';
+            let imageDirection = '';
             if (heroVictories > iaVictories) {
-                message = `GAME OVER! YOU WIN!`
-                imageDirection = './images/starWinner.png'
-                document.getElementById('plays-in-game').style.display = 'none'
+                message = `GAME OVER! YOU WIN!`;
+                imageDirection = './images/starWinner.png';
+                document.getElementById('plays-in-game').style.display = 'none';
             } else if (heroVictories < iaVictories) {
-                message = `GAME OVER! THE EVIL IA WON!`
-                imageDirection = './images/starLost.png'
-                document.getElementById('plays-in-game').style.display = 'none'
+                message = `GAME OVER! THE EVIL IA WON!`;
+                imageDirection = './images/starLost.png';
+                document.getElementById('plays-in-game').style.display = 'none';
             } 
 
-            gameOverElement.alt = message
-            gameOverElement.src = imageDirection
-            notificationSection.appendChild(gameOverElement)
-            notificationScreen.textContent = message
-            roundsLabel.textContent = `Round\n${currentTurn}`
-            scoreLabel.textContent = `Score\nPlayer: ${heroVictories} vs IA: ${iaVictories} Final Score!`
-            restartGame()
+            gameOverElement.alt = message;
+            gameOverElement.src = imageDirection;
+            notificationSection.appendChild(gameOverElement);
+            notificationScreen.textContent = message;
+            roundsLabel.textContent = `Round\n${currentTurn}`;
+            scoreLabel.textContent = `Score\nPlayer: ${heroVictories} vs IA: ${iaVictories} Final Score!`;
+            restartGame();
         } 
     }
 
     const startGame = () => {
-        notificationScreen.textContent = `The game has begun!`
-        scoreLabel.textContent = `Score\nPlayer: ${heroVictories} vs IA: ${iaVictories}`
-        roundsLabel.textContent = `Round\n${currentTurn + 1}`
-        startButton.disabled = true
-        restartButton.disabled = false
-        rockButton.disabled = false
-        paperButton.disabled = false
-        scissorButton.disabled = false
-        let allWinScenarios = document.querySelectorAll('.notifications img')
-        document.querySelectorAll('.notifications img').remove
+        notificationScreen.textContent = `The game has begun!`;
+        scoreLabel.textContent = `Score\nPlayer: ${heroVictories} vs IA: ${iaVictories}`;
+        roundsLabel.textContent = `Round\n${currentTurn + 1}`;
+        startButton.disabled = true;
+        restartButton.disabled = false;
+        rockButton.disabled = false;
+        paperButton.disabled = false;
+        scissorButton.disabled = false;
+        let allWinScenarios = document.querySelectorAll('.notifications img');
+        document.querySelectorAll('.notifications img').remove;
         allWinScenarios.forEach(element => {
-            element.remove()
+            element.remove();
         });
 
-        playsMade.classList.toggle('activate-plays-made-section')
+        playsMade.classList.toggle('activate-plays-made-section');
     }
 
     startButton.addEventListener('click', (e) => {
-        startGame()
+        startGame();
     })
 
     restartButton.addEventListener('click', (e) => {
-        restartGame()
-        notificationScreen.textContent = `Game reset`
+        restartGame();
+        notificationScreen.textContent = `Game reset`;
     })
 
     rockButton.addEventListener('click', () => {
-        game('rock')
+        game('rock');
     })
     paperButton.addEventListener('click', () => {
-        game('paper')
+        game('paper');
     })
     scissorButton.addEventListener('click', () => {
-        game('scissors')
+        game('scissors');
     })
 }
 
-rockPaperScissors()
+rockPaperScissors();
 
 
 
