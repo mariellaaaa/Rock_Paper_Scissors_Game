@@ -142,7 +142,7 @@ const rockPaperScissors = () => {
             let message = '';
             let imageDirection = '';
             if (heroVictories > iaVictories) {
-                message = `GAME OVER! YOU WIN!`;
+                message = `GAME OVER! YOU WON!`;
                 imageDirection = './images/starWinner.png';
                 document.getElementById('plays-in-game').style.display = 'none';
             } else if (heroVictories < iaVictories) {
