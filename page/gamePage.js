@@ -40,6 +40,7 @@ const rockPaperScissors = () => {
         allPlaysMade.forEach(element => {
             element.remove()
         });
+        playsMade.classList.toggle('activate-plays-made-section')
     }
 
     const computerPlay = () => {
@@ -154,6 +155,7 @@ const rockPaperScissors = () => {
             gameOverElement.src = imageDirection
             notificationSection.appendChild(gameOverElement)
             notificationScreen.textContent = message
+            roundsLabel.textContent = `Round\n${currentTurn}`
             scoreLabel.textContent = `Score\nPlayer: ${heroVictories} vs IA: ${iaVictories} Final Score!`
             restartGame()
         } 
@@ -173,6 +175,8 @@ const rockPaperScissors = () => {
         allWinScenarios.forEach(element => {
             element.remove()
         });
+
+        playsMade.classList.toggle('activate-plays-made-section')
     }
 
     startButton.addEventListener('click', (e) => {
@@ -181,6 +185,7 @@ const rockPaperScissors = () => {
 
     restartButton.addEventListener('click', (e) => {
         restartGame()
+        notificationScreen.textContent = `Game reset`
     })
 
     rockButton.addEventListener('click', () => {
